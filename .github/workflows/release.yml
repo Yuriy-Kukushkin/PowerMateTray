@@ -6,11 +6,11 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: [windows-latest]
+    runs-on: windows-latest
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
       with:
           submodules: recursive
 
@@ -20,7 +20,7 @@ jobs:
         cmd.exe /c call build_wx.bat release
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v1.0.3
 
     - name: Build PowerMateTray Release
       run: |
